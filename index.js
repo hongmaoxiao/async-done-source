@@ -4,12 +4,12 @@ var domain = require('domain');
 var EE = require('events').EventEmitter;
 
 function asyncDone(fn, done) {
-  function onSuccess() {
+  function onSuccess(result) {
     return done(undefined, result);
   }
 
-  function onError(err) {
-    return done(err);
+  function onError(error) {
+    return done(error);
   }
 
   var d = domain.create();
@@ -17,7 +17,7 @@ function asyncDone(fn, done) {
   var domainBoundFn = d.bind(fn);
 
   function asyncRunner() {
-    var result = domainBoundFn(onError);
+    var result = domainBoundFn(done);
 
     if (result && result instanceof EE) {
       d.add(result);
