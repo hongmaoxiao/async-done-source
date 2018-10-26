@@ -1,39 +1,3 @@
-// {
-//     // 使用 IntelliSense 了解相关属性。
-//     // 悬停以查看现有属性的描述。
-//     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
-//     "version": "0.2.0",
-//     "configurations": [
-//         {
-//             "type": "node",
-//             "request": "launch",
-//             "name": "tap",
-//             // "program": "${workspaceFolder}/node_modules/.bin/tap",
-//             "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/tap",
-//             "runtimeArgs": [
-//                 "--node-arg=--inspect-brk=9269",
-//                 "${workspaceFolder}/test/callbacks.js"
-//             ],
-//             "port": 9269,
-//             "restart": true,
-//             "timeout": 3000,
-//             "autoAttachChildProcesses": true
-//             // "protocol": "inspector",
-//             // "sourceMaps": true,
-//             // "cwd": "${workspaceFolder}",
-//             // "runtimeExecutable": null,
-//             // "internalConsoleOptions": "openOnSessionStart",
-//             // "stopOnEntry": true,
-//             // "env": {
-//             //     "NODE_ENV": "testing"
-//             // },
-//             // "skipFiles": [
-//             //     "node_modules/**/*.js",
-//             //     "<node_internals>/**/*.js"
-//             // ]
-//         }
-//     ]
-// }
 {
     // 使用 IntelliSense 了解相关属性。
     // 悬停以查看现有属性的描述。
@@ -44,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "tap",
-            "program": "${workspaceFolder}/test/callbacks.js",
+            "program": "${workspaceFolder}/test/streams.js",
             "cwd": "${workspaceFolder}"
         }
     ]
