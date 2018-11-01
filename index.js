@@ -8,7 +8,7 @@ var once = require('once');
 var exhaust = require('stream-exhaust');
 
 var eosConfig = {
-  error: false
+  error: false,
 };
 
 function asyncDone(fn, cb) {
@@ -45,20 +45,20 @@ function asyncDone(fn, cb) {
     }
 
     if (result && typeof result.on === 'function') {
-      // assume node stream
+      // Assume node stream
       d.add(result);
       eos(exhaust(result), eosConfig, done);
       return;
     }
 
     if (result && typeof result.subscribe === 'function') {
-      // assume RxJS observable
+      // Assume RxJS observable
       result.subscribe(onNext, onError, onCompleted);
       return;
     }
 
     if (result && typeof result.then === 'function') {
-      // assume promise
+      // Assume promise
       result.then(onSuccess, onError);
       return;
     }
