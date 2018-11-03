@@ -12,7 +12,7 @@ var eosConfig = {
 };
 
 function rethrowAsync(err) {
-  promise.nextTick(rethrow);
+  process.nextTick(rethrow);
 
   function rethrow() {
     throw err;
